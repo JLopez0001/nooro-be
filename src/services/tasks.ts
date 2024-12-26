@@ -18,3 +18,20 @@ export const createTask = async (data: CreateTaskDto): Promise<Task> => {
   return task;
 };
 
+export const updateTask = async (
+  id: number,
+  data: UpdateTaskDto
+): Promise<Task> => {
+  const task = await prisma.task.findUnique({ where: { id } });
+
+  if (!task) {
+    throw new Error("Task not found");
+  }
+
+  const updatedTask = await prisma.task.update({
+    where: { id },
+    data,
+  });
+
+  return updatedTask;
+};
