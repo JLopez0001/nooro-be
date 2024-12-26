@@ -35,3 +35,11 @@ export const updateTask = async (
 
   return updatedTask;
 };
+
+export const deleteTask = async (id: number) => {
+  const deletedTask = await prisma.task.delete({
+    where: { id },
+  });
+
+  return deletedTask;
+};
