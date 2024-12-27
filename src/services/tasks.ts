@@ -4,7 +4,11 @@ import { CreateTaskDto, UpdateTaskDto } from "src/types";
 const prisma = new PrismaClient();
 
 export const getTasks = async (): Promise<Task[]> => {
-  return await prisma.task.findMany();
+  return await prisma.task.findMany({
+    orderBy: {
+      createdAt: "desc",
+    },
+  });
 };
 
 export const createTask = async (data: CreateTaskDto): Promise<Task> => {
