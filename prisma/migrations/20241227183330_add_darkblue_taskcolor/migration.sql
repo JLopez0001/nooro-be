@@ -1,0 +1,2 @@
+-- AlterTable
+ALTER TABLE `Task` MODIFY `color` ENUM('RED', 'ORANGE', 'YELLOW', 'GREEN', 'BLUE', 'DARKBLUE', 'PURPLE', 'PINK', 'BROWN') NOT NULL;
