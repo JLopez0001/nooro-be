@@ -13,6 +13,7 @@ enum TaskColor {
   YELLOW
   GREEN
   BLUE
+  DARKBLUE
   PURPLE
   PINK
   BROWN
